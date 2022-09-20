@@ -27,4 +27,4 @@ jobs:
           method: GET
       - name: Show Response
         run: |
-            echo ${{ steps.myRequest.outputs.response }}
+            echo ${{ steps.simissues.outputs.response }}
