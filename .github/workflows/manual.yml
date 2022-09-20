@@ -28,3 +28,14 @@ jobs:
       - name: Show Response
         run: |
             echo ${{ steps.simissues.outputs.response }}
+      
+      - name: Comment Similar Issues
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ${{ steps.simissues.outputs.response }},
+            });  
