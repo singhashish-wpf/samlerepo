@@ -25,7 +25,7 @@ jobs:
         with:
           url: https://ghsimilarissues.azurewebsites.net/simissues
           method: GET
-          data: ${{context.issue}}
+          data: context.issue.body
           
       - name: Show Response
         run: |
