@@ -25,7 +25,7 @@ jobs:
         with:
           url: https://ghsimilarissues.azurewebsites.net/simissues
           method: POST
-          data: context.issue.title + context.issue.body
+          data: ${{ github.event.issue.title }} + ${{ github.event.issue.body }}
           timeout: 60000
           
       - name: Show Response
